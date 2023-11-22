@@ -5,8 +5,8 @@ import db from "@/db";
 import { RowDataPacket } from "mysql2";
 import { getServerSession } from "next-auth";
 import Link from 'next/link';
-const Comment =  dynamic(import("@/components/comment"));
-const EditDelete = dynamic(import("./editDelete"));
+// const Comment =  dynamic(import("@/components/comment"));
+// const EditDelete = dynamic(import("./editDelete"));
 interface userInfo{
   user:{
     name:string;
@@ -104,12 +104,12 @@ export default async function Detail({
                         <div className="mb-[81px] leading-6 text-[#6a6a6a]">
                           <p className="">{post && post[0]?.content}</p>
                         </div>
-                        
+{/*                         
                         {
                         //id값을 props로 넘김 > 댓글에서 누가작성한 글인지 알기 위해
                           session ? <Comment id={post?.id} /> : <p className="block border p-4 text-center my-5 rounded-md"><Link href="/login">로그인 후 댓글 이용이 가능합니다</Link></p>
                         }
-                        <EditDelete results={post as propsType['results']}/>
+                        <EditDelete results={post as propsType['results']}/> */}
                         
                       </div>
                     </div>
