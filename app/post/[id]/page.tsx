@@ -5,8 +5,8 @@ import db from "@/db";
 import { RowDataPacket } from "mysql2";
 import { getServerSession } from "next-auth";
 import Link from 'next/link';
-// const Comment =  dynamic(import("@/components/comment"));
-// const EditDelete = dynamic(import("./editDelete"));
+const Comment =  dynamic(import("@/components/comment"));
+const EditDelete = dynamic(import("./editDelete"));
 interface userInfo{
   user:{
     name:string;
@@ -30,17 +30,17 @@ interface propsType{
 
 //데이터를 호출해서 하단에서 async로 데이터를 불러들임
 
-// async function Getip(){
-//   const res = await fetch('http://localhost:3000/api/get-ip')
-//   //fetch문에 슬러쉬가 안먹기 때문에 주소전체를 적어줘야함
-//   //axios 대신 fetch를 사용하는 이유?
-//   const data = res.json();
-//   if(!res.ok){
-//     alert('에러가 발생하였습니다.');
-//     return;
-//   }
-//   return data
-// }
+async function Getip(){
+  const res = await fetch('https://next-board-lemon.vercel.app/api/get-ip')
+  //fetch문에 슬러쉬가 안먹기 때문에 주소전체를 적어줘야함
+  //axios 대신 fetch를 사용하는 이유?
+  const data = res.json();
+  if(!res.ok){
+    alert('에러가 발생하였습니다.');
+    return;
+  }
+  return data
+}
 
 
 
@@ -50,8 +50,8 @@ export default async function Detail({
   params ?: {id?: number}
 }
 ){
-  // const getIp = await Getip();
-  const userIp = "::1"
+  const getIp = await Getip();
+  const userIp = getIp.data
   // console.log(userIp + "내아이피")
   const postId = params?.id !== undefined ? params.id : 1 ;
   const[results] = await db.query<RowDataPacket[]>('select * from board.board where id= ?', [postId])
@@ -67,7 +67,7 @@ export default async function Detail({
     }else{
 
     }
-    // await db.query<RowDataPacket[]>('INSERT into board.view_log(postid,ip_address,view_date) select ?,?, NOW() where not exists (select 1 from board.view_log where postid= ? and ip_address = ? and view_date > now() - interval 24 hour)',[postId, userIp, postId, userIp])
+    await db.query<RowDataPacket[]>('INSERT into board.view_log(postid,ip_address,view_date) select ?,?, NOW() where not exists (select 1 from board.view_log where postid= ? and ip_address = ? and view_date > now() - interval 24 hour)',[postId, userIp, postId, userIp])
 
     // select 1 존재 여부를 확인하기 위해 사용 > 1이라는 건 상수 값으로 실제 데이터는 중요하지 않으며, 존재 여부를 확인하기 위함
     // 내가 원하는 테이블에서 어떠한 조건 즉 and 까지 포함한 3가지 조건이 모두 총족하는 조건을 찾는다
@@ -103,12 +103,12 @@ export default async function Detail({
                         <div className="mb-[81px] leading-6 text-[#6a6a6a]">
                           <p className="">{post && post[0]?.content}</p>
                         </div>
-{/*                         
+                        
                         {
                         //id값을 props로 넘김 > 댓글에서 누가작성한 글인지 알기 위해
                           session ? <Comment id={post?.id} /> : <p className="block border p-4 text-center my-5 rounded-md"><Link href="/login">로그인 후 댓글 이용이 가능합니다</Link></p>
                         }
-                        <EditDelete results={post as propsType['results']}/> */}
+                        <EditDelete results={post as propsType['results']}/>
                         
                       </div>
                     </div>
