@@ -1,12 +1,12 @@
 
+import dynamic from "next/dynamic";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import Comment from "@/components/comment";
 import db from "@/db";
 import { RowDataPacket } from "mysql2";
 import { getServerSession } from "next-auth";
 import Link from 'next/link';
-import EditDelete from "./editDelete";
-
+const Comment =  dynamic(import("@/components/comment"));
+const EditDelete = dynamic(import("./editDelete"));
 interface userInfo{
   user:{
     name:string;
