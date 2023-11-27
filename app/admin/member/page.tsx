@@ -43,7 +43,6 @@ export default async function AmdinMember(){
                 <h3>회원관리</h3>
             </div>
             <div className="widget w-full overflow-hidden">
-                
                    {
                     data && data.map((e:memberInfo,i:number)=>{
                         const date  = new Date(e.date);

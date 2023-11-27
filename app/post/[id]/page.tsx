@@ -1,5 +1,3 @@
-
-
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Comment from "@/components/comment";
 import db from "@/db";
