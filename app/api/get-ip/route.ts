@@ -5,7 +5,14 @@ Promise<NextResponse> =>{
     if(req.method === 'GET'){
         const ip = req.headers.get("x-forwarded-for")
         // console.log(ip) > 터미널창에 정보가 뜨게됨 그중에서 x-forward 정보가 ip 주소와 관련되어있음
-        return NextResponse.json({data: ip, message: "성공"})
+        const userAgent = req.headers.get("user-agent");
+        const platform = req.headers.get("sec-ch-ua-platfrom")
+        const data={
+            ip:ip,
+            userAgent:userAgent,
+            platform:platform
+        }
+        return NextResponse.json({data: data, message: "성공"})
 
     }else{
         

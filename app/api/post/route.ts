@@ -1,5 +1,5 @@
 import db from '@/db';
-import { NextRequest,NextResponse } from 'next/server'; //미들웨어임 
+import { NextRequest,NextResponse } from 'next/server';
 //import { NextApiRequest,NextApiResponse } from 'next'; // 자체적인 api 형태로 데이터를 받는것
 import { RowDataPacket } from 'mysql2/promise';
 

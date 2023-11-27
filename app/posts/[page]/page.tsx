@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'; 
 import { getServerSession } from 'next-auth';
 import Search from '@/components/search';
+import { useState } from 'react';
 
 
 interface userInfo{
@@ -41,7 +42,6 @@ export default async function PostList({
     const endPage = Math.min(lastPage, startPage + totalPageCnt - 1);
     let prevStart = Math.floor((currentPage - 1 ) / 5) * 5 - 4;
     let nextStart = Math.ceil((currentPage) / 5) * 5 + 1;
-
 
     let sessions = await getServerSession(authOptions) as userInfo;
     // console.log(sessions)
@@ -94,9 +94,16 @@ export default async function PostList({
             }
             {
                 Array(endPage - startPage + 1).fill(null).map((_,i)=>{
-                    const pageNumber = i + startPage ;
+                    const pageNumber = i + startPage;
+                    const isActive = pageNumber === currentPage;
                     return(
-                        <Link key={i} href={`/posts/${pageNumber}`} className='bg-white border px-1.5 py-1 text-sm rounded'>{pageNumber}</Link>
+                        <Link
+                        key={i}
+                        href={`/posts/${pageNumber}`}
+                        className={`bg-white border px-1.5 py-1 text-sm rounded ${isActive ? 'active' : ''}`}
+                      >
+                        {pageNumber}
+                      </Link>
                        
                     )
                 })

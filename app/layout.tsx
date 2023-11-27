@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Login from '@/components/login'
 import AuthSession from './session'
 import Nav from '@/components/nav'
 

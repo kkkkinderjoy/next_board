@@ -109,7 +109,7 @@ export default function Comment(props: CommentProps){
         console.log(formData);
         
     }
-    const currentDate = new Date().toLocaleDateString();
+    // const currentDate = new Date().toLocaleDateString();
 
 
     return(
