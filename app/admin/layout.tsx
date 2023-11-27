@@ -1,7 +1,5 @@
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'; 
 import AdminNav from '@/components/admin/navbar/adminnav';
-import Login from '@/components/login';
-import Logout from '@/components/logout';
 import { getServerSession } from 'next-auth';
 
 interface userInfo{
