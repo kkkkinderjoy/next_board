@@ -26,7 +26,7 @@ export default function LoginPage() {
         if(typeof window !== 'undefined'){
             const prevPage = sessionStorage.getItem('preUrl') || '/';
             //null 값일때는 '/' 즉, 메인페이지라는 의미임
-            console.log(prevPage)
+            // console.log(prevPage)
             setPreUrl(prevPage)
         }
     },[])

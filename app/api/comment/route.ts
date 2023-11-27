@@ -19,7 +19,7 @@ export const POST = async (
         
         try{
             const {parentid, userid, username, content} : PostData = JSON.parse(await req.text());
-            console.log(parentid,userid,username,content);
+            // console.log(parentid,userid,username,content);
             //서버니깐 콘솔창이 터미널에 뜸
 
             if(!parentid || !userid || !username || !content){
@@ -45,7 +45,7 @@ export const GET = async (req:NextRequest) : Promise<NextResponse> =>{
         try{
 
             const parentid = req.nextUrl.searchParams.get("id");
-            console.log(parentid);
+            // console.log(parentid);
 
             const[results] = await db.query<RowDataPacket[]>('SELECT * from board.comment where parentid=?',[parentid])
 

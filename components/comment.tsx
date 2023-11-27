@@ -88,7 +88,7 @@ export default function Comment(props: CommentProps){
     },[session?.user.name, session?.user.email,id])
     
     const params = useParams();
-    console.log(params)
+    // console.log(params)
     
     useEffect(()=>{
         const fetchData = async() =>{
@@ -106,7 +106,7 @@ export default function Comment(props: CommentProps){
     const commentValue = (e: React.ChangeEvent<HTMLInputElement>) =>{
         // setComment(e.target.value);
         setFormData({...formData, [e.target.name] : e.target.value});
-        console.log(formData);
+        // console.log(formData);
         
     }
     // const currentDate = new Date().toLocaleDateString();

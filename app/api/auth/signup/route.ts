@@ -19,7 +19,7 @@ export const POST = async(
         
         const{email,password,name,birth} :formType = JSON.parse(await req.text());
         const hash = await bcrypt.hash(password, 10);
-        console.log(hash)
+        // console.log(hash)
         
         //실제로 데이터를 보낼때는 email,hash,name을 보내는것임 password를 보내면 안됨
         //text로 받아서 받은 데이터를 json으로 parsing함

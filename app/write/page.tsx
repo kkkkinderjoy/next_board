@@ -31,7 +31,7 @@ export default function Write(){
 
     const changeEvent = (e :React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
         setFormData({...formData, [e.target.name] : e.target.value});
-        console.log(formData)
+        // console.log(formData)
     }  
     
     const submitEvent = async(e: React.FormEvent<HTMLFormElement>) =>{

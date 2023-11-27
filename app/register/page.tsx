@@ -24,7 +24,7 @@ export default function Register(){
         setFormData({
             ...formData, [e.target.name] : e.target.value
         })
-        console.log(formData)
+        // console.log(formData)
     }
     //생년월일 8자리로 제한함
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

@@ -25,7 +25,7 @@ export default async function PostList({
 }: {
     params? : {page? : number}
 }) {
-    console.log(params)
+    // console.log(params)
     const currentPage =  params?.page !== undefined ? params.page : 1 ;
     //현재 파라미터가 값이 없다면 1페이지가 되고 그게 아니라면 해당 페이지로 접속
     const perPage = 15 ;
@@ -34,7 +34,7 @@ export default async function PostList({
     const [results] = await db.query<RowDataPacket[]>('SELECT * FROM board.board order by date desc limit ? offset ?', [perPage, offset])
     const[countResult] = await db.query<RowDataPacket[]>('select count(*) as cnt from board.board')
     const totalCnt = countResult[0].cnt;
-    console.log(results);
+    // console.log(results);
     
     const lastPage = Math.ceil(totalCnt / perPage);
     const totalPageCnt = 5;

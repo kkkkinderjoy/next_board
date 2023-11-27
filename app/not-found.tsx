@@ -4,7 +4,7 @@ export default async function NotFound(){
     const headerList= headers();
     const domain = headerList.get('referer')
     // const data = await getSiteData(domain);
-    console.log(domain)
+    // console.log(domain)
     return(
         <>
 

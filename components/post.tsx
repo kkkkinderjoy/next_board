@@ -41,7 +41,7 @@ export default function Post(){
             const res = await fetch(`/api/post?page=${page}`);
             const data = await res.json();
             setPosts(data.results);
-            console.log(data);
+            // console.log(data);
             setTotalCnt(data.totalCnt)
         } 
         fetchData()

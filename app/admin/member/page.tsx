@@ -12,7 +12,7 @@ interface memberInfo{
 
 
 async function getData(){
-    const res = await fetch('http://localhost:3000/api/admin',{
+    const res = await fetch('https://next-board-lemon.vercel.app/api/admin',{
         cache: 'no-cache',
         method:'POST',
         headers:{
@@ -34,7 +34,7 @@ async function getData(){
 export default async function AmdinMember(){
     const resultdata = await getData();
     const data = resultdata.data;
-    console.log(data);
+    // console.log(data);
 
     
     return(

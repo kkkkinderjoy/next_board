@@ -15,7 +15,7 @@ export const GET= async (
         const offset =(page - 1) * perPage;
         // 페이지네이션을 구현하는 데 offset을 변수 설정해서 계속 바뀔수 있도록 구현함
 
-        console.log(page);
+        // console.log(page);
         try{
             const [results] = await db.query<RowDataPacket[]>('SELECT * FROM board.board order by date desc limit ? offset ?', [perPage, offset])
             //desc 최신순(내림차순) acs 오름차순
@@ -28,7 +28,7 @@ export const GET= async (
             //데이터 최대개수를 가져오는 방법 > count 함수를 사용하는것
             //open API의 총개수를 가져오는 방법임
             const totalCnt = countResult[0].cnt;
-            console.log(results);
+            // console.log(results);
             
             return NextResponse.json({message:"성공", results , totalCnt, page , perPage})
             //실제 API를 만드는것임
