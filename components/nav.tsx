@@ -14,6 +14,7 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth';
 import Logout from './logout';
 import Login from './login';
+import Image from 'next/image';
 
 
 
@@ -38,7 +39,7 @@ export default async function Nav(){
         <>
         <div className="w-full h-full bg-white">
             <div className="max-w-7xl mx-auto flex items-center flex-wrap justify-between">
-                <Link href="/"><img src="/images/board_logo.svg" alt="logo" className='w-40 h-20 my-1'/></Link>
+                <Link href="/"><Image width={100} height={100} src="/images/board_logo.svg" alt="logo" className='w-40 h-20 my-1'/></Link>
                 <div className="flex gap-3 mx-10 p-2">
                     <p className=""><span className='font-semibold'>{session && session.user?.name}</span>님 반갑습니다</p> 
                     <Logout />
@@ -50,7 +51,7 @@ export default async function Nav(){
             <>
             <div className="w-full h-full bg-white">
             <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap">
-                <Link href="/"><img src="/images/board_logo.svg" alt="logo" className='w-40 h-20 my-1'/></Link>
+                <Link href="/"><Image width={100} height={100} src="/images/board_logo.svg" alt="logo" className='w-40 h-20 my-1'/></Link>
                 <div className="flex gap-3 mx-5 justify-end">
                     <Link href='/register'>회원가입</Link>
                     <Login />
