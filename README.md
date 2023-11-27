@@ -1,37 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<h2 align="center">💭 Dashboard, 게시판 💭</h2>
+<img src="https://github.com/kkkkinderjoy/next_board/assets/142365394/2e23c9eb-dc12-4d6d-b584-986986879294" width="970" alt="dashboard" >
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔗 배포링크
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> <https://next-board-lemon.vercel.app>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br />
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### 💻 기술스택
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `Next.js`, `Typescript`, `MYSQL` , `tailwindcss`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br />
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 🗓 개발 기간
+> 23.11.7 ~ 23.11.22(16일)
+
+<br />
+
+
+
+### 프로젝트 기획 배경
+> Next.js와 MYSQL을 연동하고 간단한 게시판을 만들고자 하였고,  글 쓰기 / 글 열람 / 글 수정/ 글 삭제의 총 4가지 기능을 구현해보았습니다.
+<br />
+
+### 프로젝트 상세 소개
+
+
+<br />
+
+
+### 🎨 어려웠던 점
+ 
+
+### 🎨 개선해야할 점
 
