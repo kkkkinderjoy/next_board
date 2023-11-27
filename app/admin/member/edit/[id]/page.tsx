@@ -42,7 +42,7 @@ export default function MemberEdit({params} :{params :
                     <label htmlFor="email" className="basis-3/12 text-xs sm:text-xm">레벨 : </label>
                     <select name="level" className="border text-sm px-5 py-2 rounded-md">
                         {
-                            Array(7).fill(null).map((_,i)=>{
+                            Array(8).fill(null).map((_,i)=>{
                                 return(
                                     <option key={i} value="{i+2}">{i+2}</option>
                                 )
