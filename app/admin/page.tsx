@@ -1,13 +1,24 @@
-import ChartCom from '../../components/admin/chart/chart';
+
+import NewMember from '@/components/admin/chart/newmember';
+import NewPost from '@/components/admin/chart/newpost';
+import TotalCount from '@/components/admin/chart/totalcount';
+
+
+
+
 
 export default async function Admin(){
-    
-    
-    return(
-        <>
-            <p>관리자 전용</p>
-            <ChartCom />
-            
-        </>
-    )
+  
+  
+
+  return(
+    <>
+     <TotalCount />
+     <div className="w-full my-5 flex flex-wrap justify-between">
+        <NewMember />
+        <NewPost />
+     </div>
+     
+    </>
+  )
 }

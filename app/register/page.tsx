@@ -85,7 +85,7 @@ export default function Register(){
                             onChange={changeEvent}  name="password" required/>
                         </div>
                         <div className='text-start mt-3'>
-                            <p>닉네임</p>
+                            <p>이름</p>
                             <input type="text" className='px-2 border border-l-blue-300 border-l-[3px] h-[50px] w-full mx-auto focus:outline-gray-400' placeholder='닉네임을 입력해주세요'
                             onChange={changeEvent}  name="name" required />
                         </div>
