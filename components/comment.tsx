@@ -119,8 +119,6 @@ export default function Comment(props: CommentProps){
                 <>
                 <div className="">
                     <div className="w-full h-12 flex items-center pb-[25px] border-b-[#e8e8e8] border-b-[1px] gap-1">
-                        <FontAwesomeIcon icon={faComment} className="text-6"/>
-                        <span className="text-[0.875rem] lg:text-[1rem] flex">댓글 <p className="text-[#ff501b]">0</p>개</span>
                         {/* state값으로  */}
                     </div>
                     <div className="pt-6">
