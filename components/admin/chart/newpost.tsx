@@ -83,7 +83,7 @@ export default function NewPost(){
                 <div className="w-full">
                     <ul className="flex py-4 text-sm justify-between border-b bg-[#f6f9fc]">
                         <li className="basis-[33%] text-[#6f809a] font-bold text-center text-xs sm:text-sm">이름</li>
-                        <li className="basis-2/5 text-[#6f809a] font-bold text-center text-xs sm:text-sm">제목</li>
+                        <li className="basis-2/5 text-[#6f809a] font-bold text-center text-xs sm:text-sm">내용</li>
                         <li className="basis-1/5 text-[#6f809a] font-bold text-center text-xs sm:text-sm">작성일</li>
                     </ul>
                 </div>

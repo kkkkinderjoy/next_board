@@ -24,7 +24,7 @@ export default async function TotalCount(){
   const resultData = await getData();
   const data = resultData?.data;
   const listMenu = ['총 회원수', "신규 가입 수", "금일 새글 수", "금일 새댓글 수", "금일 방문자수", "총 방문자수"]
-  const listCnt = [data?.totalCnt, data?.todayCnt, data?.writeCnt, data?.commentCnt, data?.visitCnt, data?.visitTotalCnt];
+  const listCnt = [data?.totalCnt, data?.memberCnt, data?.writeCnt, data?.commentCnt, data?.visitCnt, data?.visitTotalCnt];
   return(
     <ul className="flex justify-between flex-wrap lg:mb-4">
       {
